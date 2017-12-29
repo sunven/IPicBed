@@ -33,13 +33,13 @@
             this.七牛配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.radMarkdown = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.txtUrl = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSelectPicture = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radMarkdown = new System.Windows.Forms.RadioButton();
             this.lblTip = new System.Windows.Forms.Label();
+            this.btnSelectPicture = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtUrl = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -63,6 +63,7 @@
             this.七牛配置ToolStripMenuItem.Name = "七牛配置ToolStripMenuItem";
             this.七牛配置ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.七牛配置ToolStripMenuItem.Text = "七牛配置";
+            this.七牛配置ToolStripMenuItem.Click += new System.EventHandler(this.七牛配置ToolStripMenuItem_Click);
             // 
             // 关于ToolStripMenuItem
             // 
@@ -96,6 +97,25 @@
             this.splitContainer1.SplitterDistance = 25;
             this.splitContainer1.TabIndex = 1;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 12);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "上传成功后：";
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(211, 4);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(65, 16);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.Text = "返回url";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
             // radMarkdown
             // 
             this.radMarkdown.AutoSize = true;
@@ -108,32 +128,14 @@
             this.radMarkdown.Text = "返回Markdown格式";
             this.radMarkdown.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // lblTip
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(211, 4);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(65, 16);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = "返回url";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // txtUrl
-            // 
-            this.txtUrl.Location = new System.Drawing.Point(4, 4);
-            this.txtUrl.Multiline = true;
-            this.txtUrl.Name = "txtUrl";
-            this.txtUrl.Size = new System.Drawing.Size(368, 63);
-            this.txtUrl.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(115, 121);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 12);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "拖拽图片到此区域以上传或";
+            this.lblTip.AutoSize = true;
+            this.lblTip.ForeColor = System.Drawing.Color.Red;
+            this.lblTip.Location = new System.Drawing.Point(12, 255);
+            this.lblTip.Name = "lblTip";
+            this.lblTip.Size = new System.Drawing.Size(0, 12);
+            this.lblTip.TabIndex = 3;
             // 
             // btnSelectPicture
             // 
@@ -145,23 +147,22 @@
             this.btnSelectPicture.UseVisualStyleBackColor = true;
             this.btnSelectPicture.Click += new System.EventHandler(this.btnSelectPicture_Click);
             // 
-            // label2
+            // label1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 12);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "上传成功后：";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(115, 121);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(149, 12);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "拖拽图片到此区域以上传或";
             // 
-            // lblTip
+            // txtUrl
             // 
-            this.lblTip.AutoSize = true;
-            this.lblTip.ForeColor = System.Drawing.Color.Red;
-            this.lblTip.Location = new System.Drawing.Point(12, 255);
-            this.lblTip.Name = "lblTip";
-            this.lblTip.Size = new System.Drawing.Size(0, 12);
-            this.lblTip.TabIndex = 3;
+            this.txtUrl.Location = new System.Drawing.Point(4, 4);
+            this.txtUrl.Multiline = true;
+            this.txtUrl.Name = "txtUrl";
+            this.txtUrl.Size = new System.Drawing.Size(368, 63);
+            this.txtUrl.TabIndex = 0;
             // 
             // Form1
             // 
@@ -178,6 +179,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "i图床";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
