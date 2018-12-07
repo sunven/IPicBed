@@ -80,7 +80,7 @@ namespace IPicBed
 
             var putPolicy = new PutPolicy { Scope = Bucket + ":" + fileName };
             putPolicy.SetExpires(3600);
-            putPolicy.DeleteAfterDays = 1;
+            //putPolicy.DeleteAfterDays = 1;
             var token = Auth.CreateUploadToken(mac, putPolicy.ToJsonString());
             var config = new Config
             {
